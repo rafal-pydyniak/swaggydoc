@@ -84,7 +84,7 @@ class SwaggyDataService {
         List<String> resourcePathParts = null
         List<Parameter> resourcePathParams = null
 
-        def mappingsForController = grailsUrlMappingsHolder.urlMappings.findAll { it.controllerName == controller }
+        def mappingsForController = grailsUrlMappingsHolder.urlMappings.findAll { it.controllerName.toString().toUpperCase() == controllerName.toString().toUpperCase() }
 
         Map<String, MethodDocumentation> apis = mappingsForController.
                 collectEntries { mapping ->
